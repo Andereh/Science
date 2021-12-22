@@ -3,9 +3,6 @@ from colorama import Fore, init
 
 init()
 
-class bcolors():
-	OK = '\033 [ 92m'
-
 # Calculo de datos
 def calcularRes(coc, datos):
 	_restos = [datos[0]]
