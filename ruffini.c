@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 typedef enum {false, true} bool;
-
 typedef struct {
         int base     [10];
         int restos   [10];
@@ -11,11 +10,11 @@ typedef struct {
 int raices [10];
 int raices_len = 0;
 
-
 void rellenar_con_linea(int n);
 void rellenar(int n);
 void imprimir_datos(Poly poly, int len);
 void imprimir_raiz(int raiz);
+
 
 int main()
 {
@@ -25,9 +24,9 @@ int main()
 
     printf("\nIntroduce el numero de terminos: ");
     scanf("%d", &base_len);
-
-
     printf("\n");
+
+
     for (i = 0; i < base_len; i++)   // Obtencion de datos 
     {
         printf("    Termino #%d: ", i+1);
@@ -37,6 +36,7 @@ int main()
 
 
     printf("\nResolucion del ejercicio: \n\n");
+
 
     poly.restos[0] = poly.base[0]; // Parte de computo
     imprimir_datos(poly, base_len);
@@ -51,7 +51,6 @@ int main()
 }
 
 
-
 void rellenar_con_linea(int n)
 {
     if      (n>=1000) printf(" | ");
@@ -64,13 +63,11 @@ void rellenar_con_linea(int n)
     else if (n<=-10) printf("  | ");
     else if (n< 0)  printf("   | ");
     printf("%d", n);
-
 }
 
 
 void rellenar(int n)
 {
-
     if      (n>=1000) printf("  ");
     else if (n>=100) printf("   ");
     else if (n>=10) printf("    ");
@@ -107,6 +104,7 @@ void imprimir_datos(Poly poly, int len)
             raices[raices_len] = cociente;
             raices_len++;
 
+
             if (is_fist_time)
             {
                 rellenar_con_linea(poly.base[0]);
@@ -135,8 +133,6 @@ void imprimir_datos(Poly poly, int len)
         } 
     }
     if (j == 18) printf("\nNoup, ese polinomio no se puede factorizar\nPor eso sus raices deberian estar incompletas");
-
-
 }
 
 void imprimir_raiz(int raiz)
