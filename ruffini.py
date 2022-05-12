@@ -21,13 +21,13 @@ nums = [-1, 1, -2, 2, -3, 3, -4, 4, -5, 5, -6, 6, -7, 7, -8, 8, -9, 9]
 cocientes = [' ']
 i = 1
 
-print("\nIntroduce los valores (0 para salir)\n")
-while True:
+nterminos = int(input('\nIntroduce el numero de terminos: '))
+print('\n', end='')
+
+while nterminos > 0:
     temp = int(input(f"    Termino #{i}: "))
-    if temp != 0:
-        base.append(temp)
-    if temp == 0:
-        break
+    base.append(temp)
+    nterminos -= 1
     i = i+1
 print("\nResolucion del ejercicio")
 #Impresion de datos
