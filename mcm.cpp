@@ -1,5 +1,4 @@
 #include <iostream>
-#include <ctime>
 #include "mcm.h"
 
 using namespace std;
@@ -15,14 +14,10 @@ int main()
     cout << "num a facorizar: ";
     cin >> base;
 
-    t0 = clock();
+    my_string = get_data(&base); // Toda la logica y lo "complicado" esta en mcm.h
+    cout << "\nFatores primos: "<< my_string << "\n";
 
-    my_string = get_data(&base);
-    cout << "Fator primo: "<< my_string;
+    system("pause");
 
-    t1 = clock();
-
-    double time = (double(t1-t0)/CLOCKS_PER_SEC) + 0.0001f;
-    cout << "\n\nTardamos " << time << "s en completar";
     return 0;
 }

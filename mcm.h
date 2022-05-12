@@ -37,22 +37,13 @@ void next_primo(int * _nprimo)
 }
 
 
-void rellenar(int * n)
-{
-    int sep = 5;
-    string str_n = to_string(*n);
-    int n_spaces = sep - str_n.length();
-
-    for (int i = 0; i < n_spaces; i++) cout << ' ';
-    cout << *n << " | ";
-}
-
 string get_data(int* base)
 {
     bool as_change = false, has_been_divided = false;
     int nprimo = 2, pow_counter = 0;
     int pows [2][10];
     string data = "";
+
 
     while (*base > 1)
     {
@@ -80,6 +71,7 @@ string get_data(int* base)
         }
     }
 
+
     if (has_been_divided)
     {
         data += to_string(nprimo) + "^" + to_string(pow_counter) + " ";
@@ -87,7 +79,3 @@ string get_data(int* base)
 
     return data;
 }
-
-
-
-
