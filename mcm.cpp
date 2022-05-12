@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <iostream>
 #include "mcm.h"
 
@@ -12,12 +13,13 @@ int main()
     string my_string;
 
     cout << "num a facorizar: ";
-    cin >> base;
+    scanf("%d", &base);
 
     my_string = get_data(&base); // Toda la logica y lo "complicado" esta en mcm.h
-    cout << "\nFatores primos: "<< my_string << "\n";
+    cout << "\nFatores primos: "<< my_string;
 
-    system("pause");
+    fflush(stdin);
+    getchar();
 
     return 0;
 }

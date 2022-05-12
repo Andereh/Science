@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+typedef enum {false, true} bool;
+
 typedef struct {
         int base     [10];
         int restos   [10];
