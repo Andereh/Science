@@ -1,0 +1,59 @@
+set nu
+set rnu
+set smartindent
+set ts=4
+set shiftwidth=4
+set expandtab
+let mapleader=' '
+set noshowmode
+set cursorline
+set mouse=a
+set scrolloff=8
+let g:gruvbox_contrast_dark='hard'
+
+nmap <leader>w :w<CR>
+nmap <leader>q :q<CR>
+nmap <leader>r :source ~/.vimrc<CR>
+
+call plug#begin()
+
+Plug 'morhetz/gruvbox'
+Plug 'jiangmiao/auto-pairs'
+Plug 'vim-airline/vim-airline'
+
+" Typing
+Plug 'tpope/vim-surround'
+
+" tmux
+Plug 'christoomey/vim-tmux-navigator'
+
+" NerdTree
+Plug 'scrooloose/nerdtree'
+
+" syntax
+Plug 'sheerun/vim-polyglot'
+
+
+" IDE
+Plug 'easymotion/vim-easymotion'
+Plug 'yggdroot/indentline'
+Plug 'scrooloose/nerdcommenter'
+Plug 'mhinz/vim-signify'
+
+" Completation
+
+call plug#end()
+
+colorscheme gruvbox
+set background=dark
+
+
+" map
+nnoremap <leader>; $a;<esc>
+
+" plug
+nnoremap <leader>nt :NERDTreeFind<CR>
+nmap <leader>s <Plug>(easymotion-s2)
+
+" buffer
+map <leader>ob :Buffers<CR>
