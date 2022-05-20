@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-typedef enum {false, true} bool;
 typedef struct {
         int base     [10];
         int restos   [10];
@@ -45,6 +44,7 @@ int main()
     printf("\n\nRaices: ");
     for (i = 0; i < raices_len; i++) imprimir_raiz(raices[i]);
 
+    printf("\n");
 
     getchar();
     return 0;
