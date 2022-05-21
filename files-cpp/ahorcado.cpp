@@ -15,9 +15,11 @@ bool has_ganado = false;
 
 void start()
 {
-	srand(time(NULL));               // Eligiendo una palabra aleatoria.
+	system("cls");
+	srand(time(0));               // Eligiendo una palabra aleatoria
 	int index = floor(rand() % (sizeof(lista_de_palabras)/sizeof(*lista_de_palabras)));       //...
 	palabra = lista_de_palabras[index];  //...
+	cout << index << "\n";
 	
 	for (int i = 0; i < palabra.length(); ++i)
 	{
@@ -60,6 +62,7 @@ void intentar_letra(char l)
 		if (l == Letra)
 		{
 			cout << "Ya usaste la letra: " << l << endl;
+			acertada = true;
 			break;
 		}
 	}	
@@ -93,13 +96,13 @@ bool validar_victoria()
 		}
 	}
 	
-	if(vidas == 0)
+	if(vidas < 1)
 	{
-		return false;
+		return true;
 	} else if(palabra_completa)
 	{
 		has_ganado = true;
-		return true;
+		return false;
 	}
 	return false;
 }
@@ -117,7 +120,7 @@ int main(int argc, char const *argv[])
 		cout << "Caracteres usados: " << letras_usadas << endl;
 		letra = pedir_letra();
 		intentar_letra(letra);		
-	} while(validar_victoria());
+	} while(!validar_victoria());
 
 	if (has_ganado)
 	{
