@@ -3,7 +3,6 @@
 #include <string.h>
 #include <random>
 #include <math.h>
-#include <windows.h>
 
 using namespace std;
 
