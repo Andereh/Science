@@ -22,4 +22,4 @@ int main(int argc, char const *argv[])
 	printf(" Ahorros totales: %d$\n ", dineroAhorrado);
 	system("pause");
 	return 0;
-}
+}// old

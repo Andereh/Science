@@ -14,4 +14,4 @@ int main(int argc, char const *argv[])
 string sayHello()
 {
 	return "Hello";
-}
+}// old

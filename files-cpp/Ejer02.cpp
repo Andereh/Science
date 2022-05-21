@@ -86,4 +86,4 @@ string pagoConTarjeta;
  	system("pause");
  	
  	return 0;
- }
+ }// old

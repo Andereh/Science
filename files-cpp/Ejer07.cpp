@@ -46,4 +46,4 @@ int main(int argc, char const *argv[])
 	printf("alumnos reprobados: %d\n", reprobados);
 	system("pause");
 	return 0;
-}
+}// old

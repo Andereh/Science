@@ -22,4 +22,4 @@ int main(int argc, char const *argv[])
 	cout << " Bienvenido!\n";
 	system("pause");
 	return 0;
-}
+}// old
