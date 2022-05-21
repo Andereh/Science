@@ -1,5 +1,5 @@
-#include <iostream>
 #include <stdlib.h>
+#include <iostream>
 #include <string.h>
 #include <random>
 #include <math.h>
@@ -15,9 +15,8 @@ bool has_ganado = false;
 
 void start()
 {
-	system("cls");
-	srand(GetTickCount());               // Eligiendo una palabra aleatoria.
-	int index = floor(rand() % sizeof(lista_de_palabras)/sizeof(*lista_de_palabras));       //...
+	srand(time(NULL));               // Eligiendo una palabra aleatoria.
+	int index = floor(rand() % (sizeof(lista_de_palabras)/sizeof(*lista_de_palabras)));       //...
 	palabra = lista_de_palabras[index];  //...
 	
 	for (int i = 0; i < palabra.length(); ++i)
@@ -33,7 +32,7 @@ void mostrar_info(){
 
 	for(int i = 0; i < palabra.length(); i++)   
 	{
-		printf("%s", palabra_incognita[i]); //Mostrando la palabra oculta
+		printf("%c", palabra_incognita[i]); //Mostrando la palabra oculta
 	}
 	printf("\n");
 }
@@ -131,4 +130,4 @@ int main(int argc, char const *argv[])
 	
 	return 0;
 }
-// old
+
