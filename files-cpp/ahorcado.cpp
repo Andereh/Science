@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <time.h>
 #include <iostream>
 #include <string.h>
 #include <random>
@@ -16,7 +17,7 @@ bool has_ganado = false;
 void start()
 {
 	system("cls");
-	srand(time(0));               // Eligiendo una palabra aleatoria
+	srand(time(NULL));               // Eligiendo una palabra aleatoria
 	int index = floor(rand() % (sizeof(lista_de_palabras)/sizeof(*lista_de_palabras)));       //...
 	palabra = lista_de_palabras[index];  //...
 	cout << index << "\n";
