@@ -2,3 +2,7 @@ test-module-e
 test-module.cpp
 *.exe
 *.class
+AppJs
+JS
+Servers
+Webs
