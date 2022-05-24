@@ -1,5 +1,6 @@
 #include <iostream>
 #include <math.h>
+#include <time.h>
 
 using namespace std;
 
@@ -26,7 +27,7 @@ int main()
 
     do
     {
-    system("clear");
+    system("cls");
 
     player_key = player_key == 'X' ? 
         'O' : 'X';
@@ -55,7 +56,7 @@ int main()
         printf("Que lamentable es ver a dos mancos jugar juntos");
     }
 
-    system("clear");
+    system("cls");
     printf("Ja! Siempre supe que el equipo de las \"%c\" iba a ganar\n", player_key);
     printf("Hasta le aposte 10$\n\n");
     print_table();
