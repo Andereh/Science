@@ -16,7 +16,7 @@ bool has_ganado = false;
 
 void start()
 {
-	system("cls");
+	system("clear");
 	srand(time(NULL));               // Eligiendo una palabra aleatoria
 	int index = floor(rand() % (sizeof(lista_de_palabras)/sizeof(*lista_de_palabras)));       //...
 	palabra = lista_de_palabras[index];  //...
@@ -32,7 +32,7 @@ void start()
 void mostrar_info(){
 	cout << "Vidas: " << vidas << "\n\n  ==> ";
 
-	for (char Letra : palabra_incognita) cout << Letra; // imprime la palabra con guines
+	for (char Letra : palabra_incognita) cout << Letra; // imprime la palabra con guiones
 	cout << "\n\n";
 }
 
@@ -109,7 +109,7 @@ int main(int argc, char const *argv[])
 	intentar_letra(letra);
 
 	do {
-		system("cls"); 
+		system("clear"); 
 		mostrar_info();
 		cout << "Caracteres usados: " << letras_usadas << endl;
 		letra = pedir_letra();
