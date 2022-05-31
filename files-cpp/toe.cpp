@@ -27,7 +27,7 @@ int main()
 
     do
     {
-    system("cls");
+    system("clear");
 
     player_key = player_key == 'X' ? 
         'O' : 'X';
@@ -56,7 +56,7 @@ int main()
         printf("Que lamentable es ver a dos mancos jugar juntos");
     }
 
-    system("cls");
+    system("clear");
     printf("Ja! Siempre supe que el equipo de las \"%c\" iba a ganar\n", player_key);
     printf("Hasta le aposte 10$\n\n");
     print_table();
