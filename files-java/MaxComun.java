@@ -1,32 +1,47 @@
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
-public class MaxComun {
-    public static int getMCM(int _a, int _b)
+class Calculadora {
+    private int a, b;
+
+    public void setValues(int _a, int _b)
     {
-        for (int i = Math.min(_a, _b); i > 1; i--)
-        {
-            if (_a%i == 0 && _b%i == 0) return i;
+        a = _a;
+        b = _b;
+    }
 
+
+    public void getResult()
+    {
+        for (int i = Math.min(a, b); i > 1; i--)
+        {
+            if (a%i == 0 && b%i == 0) 
+            {
+                System.out.print("Maximo comun divisor: " + i + "\n");
+                return;
+            }
         }
 
         System.out.println("Estos numeros no tienen un divisor comun\n");
-        return 0;
     }
+}
 
-    public static void main(String[] args)
+public class MaxComun {
+
+    public static void main(String[] args) throws Exception
     {
-        Scanner scan = new Scanner(System.in);
-        int a, b, result;
+        int a, b;
 
-        System.out.print("Valor #1: ");
-        a = scan.nextInt();
+        Calculadora calc = new Calculadora();
 
-        System.out.print("Valor #2: ");
-        b = scan.nextInt();
+        a = Integer.parseInt(JOptionPane.showInputDialog(null, "Valor #1"));
+        b = Integer.parseInt(JOptionPane.showInputDialog(null, "Valor #2"));
 
-        result = getMCM(a, b);
+        if (a < 2 || b < 2)
+        {
+            throw new Exception("Ninguno de los valores puede ser menor a 2");
+        }
 
-        System.out.print("Maximo comun divisor: " + result + "\n");
-
+        calc.setValues(a, b);
+        calc.getResult();
     }
 }
