@@ -7,6 +7,7 @@ using namespace std;
 int n;
 
 int main() {
+	cout << "Programa que te ayuda a descomponer numeros\n";
 	cout << "Que numero quieres descomponer: ";
 	cin >> n;
 
