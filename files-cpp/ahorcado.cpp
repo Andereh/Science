@@ -7,7 +7,8 @@
 
 using namespace std;
 
-string lista_de_palabras[] = {"banana", "mango", "sandia", "melocoton", "guayaba", "yuca", "pepino"};
+string lista_de_palabras[] = {"banana",  "mango", "sandia", "melocoton",
+                              "guayaba", "yuca",  "pepino"};
 string palabra, palabra_incognita = "", letras_usadas = "";
 char letra;
 int vidas = 9;
@@ -49,7 +50,7 @@ void intentar_letra(char l)
 {
 	bool ya_fue_usada = false, acertada = false;
 
-	if 	( l >= 97 || l <= 122) l -= 32; // Si es una LETRA minuscula se convierte a MAYUSCULAS
+	if 	( l >= 97 && l <= 122) l -= 32; // Si es una LETRA minuscula se convierte a MAYUSCULAS
 
 
 	// Verificando si la letra ya fue usada
@@ -116,10 +117,10 @@ int main(int argc, char const *argv[])
 		intentar_letra(letra);		
 	} while(seguimos_jugando());
 
-	if (has_ganado) cout << "\nCorrecto! La palabra era\n ===>  " << palabra << "\n";
+	if (has_ganado) cout << "\nCorrecto! La palabra era\n  ==>  " << palabra << "\n";
 	else 
 	{
-		cout << "\nEnserio? Era tan facil! Solo tenias que decir\n ===>  " << palabra << "\n";
+		cout << "\nEnserio? Era tan facil! Solo tenias que decir\n  ==>  " << palabra << "\n";
 	}
 	
 	return 0;

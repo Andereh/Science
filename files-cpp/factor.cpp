@@ -1,23 +1,26 @@
 #include <stdio.h>
 #include <iostream>
 
+#define ull unsigned long long
+
+
 using namespace std;
 
 
 bool is_prime(int number);
-void next_primo(int * _nprimo);
-string get_data(int* base);
+void next_divisor(int *,ull*);
+string get_data(ull * base);
 
 int nprimo = 2;
 unsigned t0, t1;
 
 int main()
 {
-    int base; 
+    ull base; 
     string my_string;
 
     cout << "num a facorizar: ";
-    scanf("%d", &base);
+    scanf("%lld", &base);
 
     my_string = get_data(&base); // Toda la logica y lo "complicado" esta en mcm.h
     cout << "\nFatores primos: "<< my_string << "\n";
@@ -42,27 +45,38 @@ bool is_prime(int number)
 }
 
 
-void next_primo(int * _nprimo)
+void next_divisor(int * _nprimo, ull* n)
 {
     if (*_nprimo == 2)
     {
         *_nprimo = 3;
         return;
     }
+
+	for (int i = *_nprimo + 2; i < *n / 2; i += 2) {
+		if (*n%i == 0) {
+			*_nprimo = i;
+			return;
+		}
+	}
+	
+	*_nprimo = *n;
+	return;
+	
     
 
-    for (int dividendo = (*_nprimo + 2); true; dividendo += 2)
-    {
-        if (is_prime(dividendo))
-        {
-            *_nprimo = dividendo;
-            return;
-        }
-    }
+    //for (int dividendo = (*_nprimo + 2); true; dividendo += 2)
+    //{
+        //if (is_prime(dividendo))
+        //{
+            //*_nprimo = dividendo;
+            //return;
+        //}
+    //}
 }
 
 
-string get_data(int* base)
+string get_data(ull* base)
 {
     bool as_change = false, has_been_divided = false;
     int nprimo = 2, pow_counter = 0;
@@ -92,7 +106,7 @@ string get_data(int* base)
                 pow_counter = 0;
             }
             as_change = true;
-            next_primo(&nprimo);
+            next_divisor(&nprimo, base);
         }
     }
 
